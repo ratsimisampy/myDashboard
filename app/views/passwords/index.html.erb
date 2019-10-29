@@ -1,0 +1,30 @@
+<div class="container">
+<h1 class="m-3">Passwords management</h1>
+
+<%= link_to new_password_path do %><i class="fa fa-plus-square fa-3x m-3"></i> <% end %>
+
+<table class="table table-striped table-sm table-hover w-50 m-3">
+<thead>
+        <th scope="col">site web </th>
+        <th scope="col">identifiant </th>
+        <th scope="col">password</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </thead>
+<% @passwords.each do |password| %>    
+    <tr>
+        <td><%= password.url %></td>
+        <td><%= password.email %></td>
+        <td><%= password.pwd %></td>  
+        <td><i class="fa fa-eye-slash"></i></td>              
+        <td> <%= link_to edit_password_path(password) do %><i class="fa fa-edit"></i> <% end %> </td>
+            <td><%= link_to password_path(password),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } do %> <i class="fa fa-trash" style="color:red"></i> 
+                <% end %>
+                </td>              
+    </tr>
+<% end %>
+</table>
+</div>

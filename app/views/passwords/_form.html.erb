@@ -1,0 +1,24 @@
+<%= form_with model: @password, local: true, class: "form-inline m-3" do |form| %>
+   
+    <div>
+      
+      <%= form.text_field :url, class: "form-control m-2", placeholder: "website here" %>
+    </div>
+   
+    <div>
+      
+      <%= form.text_field :email, class: "form-control m-2", placeholder: "email identifier here" %>
+    </div>
+   
+    <div>
+ 
+      <%= form.text_field :pwd, class: "form-control m-2", placeholder: "*********" %>
+    </div>
+
+    <div>
+      <%= form.submit  class: "btn btn-primary" %>
+    </div>
+   
+    <%= render 'shared/pwd_error_messages' if @password.errors.any? %>
+
+  <% end %>

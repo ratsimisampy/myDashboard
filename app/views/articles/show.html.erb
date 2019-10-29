@@ -1,0 +1,29 @@
+
+<div class="container">
+<div class="jumbotron">
+
+
+<h3>
+<%= @article.title %>
+</h3>
+
+<p>
+<%= @article.text %>
+</p>
+</div>
+
+<h3>Comments</h3>
+<div class="jumbotron">
+<%= render @article.comments %>
+</div>
+
+<h3>Add a comment:</h3>
+<div class="jumbotron">
+<%= render 'comments/form' %>
+</div>
+
+
+<%= link_to articles_path do %><i class="fa fa-reply fa-2x m-2"></i> <% end %>
+<%= link_to edit_article_path(@article) do %><i class="fa fa-retweet fa-2x m-2"></i> <% end %>
+
+</div>

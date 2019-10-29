@@ -1,0 +1,25 @@
+
+<div class="container">
+<div class="jumbotron form-inline">
+
+
+    <p class="form-control m-2">
+    <strong>Page web:</strong>
+    <%= @password.url %>
+    </p>
+
+    <p class="form-control m-2">
+    <strong>identifiant:</strong>
+    <%= @password.email %>
+    </p>
+
+    <p class="form-control m-2">
+    <strong>Password</strong>
+    <%= @password.pwd %>
+    </p>
+</div>
+
+<%= link_to passwords_path do %><i class="fa fa-reply fa-2x m-2"></i> <% end %>
+    <%= link_to edit_password_path(@password) do %><i class="fa fa-retweet fa-2x m-2"></i> <% end %>
+
+</div>
