@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
     
     def index   
         @articles = Article.all
+        @users = User.all 
+        comments = Comment.all
+        @comments_by_article = Comment.all.group_by(&:article_id)
+        #binding.pry
     end
     
     def new
@@ -19,8 +23,8 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.new(article_params)
-
+        @article = current_user.articles.build(article_params)
+        
         if @article.save
           flash[:success] = "You, registered as '#{current_user.id}' have successfully create a new article titled: #{@article.title}."
         redirect_to @article
@@ -52,7 +56,7 @@ class ArticlesController < ApplicationController
 
     private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :user_id)
   end
 
   def require_login
