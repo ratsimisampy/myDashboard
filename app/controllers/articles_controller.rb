@@ -20,6 +20,9 @@ class ArticlesController < ApplicationController
 
     def show
         @article = Article.find(params[:id])
+        @users = User.all
+       # @comment_autor = @article.comment.find(params[:id]).user_id
+       # binding.pry
     end
 
     def create

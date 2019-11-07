@@ -8,3 +8,8 @@
 <strong>Comment:</strong>
 <%= comment.body %>
 </p>
+
+<p>
+<strong>Auteur :</strong>
+<%= @users.find(comment.user_id).username %>
+</p>
