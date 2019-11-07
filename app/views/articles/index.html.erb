@@ -23,7 +23,7 @@
       <td><%= @users.find(article.user_id).username %></td> 
       <td> <%= @comments_by_article[article.id] && @comments_by_article[article.id].count %> </td>
       <td>  
-        <i class="fa fa-star"><i class="fa fa-star"></i><i class="fa fa-star-half">
+        <p><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
          </td>
       <td> <%= link_to article_path(article) do %><i class="fa fa-search"></i> <% end %> </td>
       <td> 

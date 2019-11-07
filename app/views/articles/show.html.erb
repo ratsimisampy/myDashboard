@@ -10,6 +10,8 @@
 <p>
 <%= @article.text %>
 </p>
+<%= button_to 'Like', article_likes_path(@article), method: :article %> </br>
+<p><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 </div>
 
 <h3>Comments</h3>

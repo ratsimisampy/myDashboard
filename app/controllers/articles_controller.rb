@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
         @users = User.all 
         comments = Comment.all
         @comments_by_article = Comment.all.group_by(&:article_id)
-        #binding.pry
+        binding.pry
     end
     
     def new

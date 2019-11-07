@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   resources :articles do
     resources :comments
+    resources :likes
   end
   resources :passwords
   root 'welcome#index'
