@@ -3,6 +3,7 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }  
   get 'welcome/index'
+  get 'search',to:"articles#search"
   
   resources :articles do
     resources :comments

@@ -1,13 +1,21 @@
 class ArticlesController < ApplicationController
-    before_action :require_login, except: [:index, :show]
+    before_action :require_login, except: [:index, :show, :search]
     
     
+    def search
+      query = "%#{params[:q].downcase}%"
+      @articles = Article.where("lower(title) LIKE ? or lower(text) LIKE ?",query,query)
+      @users = User.all
+      @comments_by_article = Comment.all.group_by(&:article_id)      
+            
+     
+    end
+
     def index   
         @articles = Article.all
         @users = User.all 
         comments = Comment.all
-        @comments_by_article = Comment.all.group_by(&:article_id)
-        #binding.pry
+        @comments_by_article = Comment.all.group_by(&:article_id)        
     end
     
     def new
