@@ -23,23 +23,25 @@
       <td><%= @users.find(article.user_id).username %></td> 
       <td> <%= @comments_by_article[article.id] && @comments_by_article[article.id].count %> </td>
       <td>  
-        <p><%= @article.likes.count %> <%= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+        <p><%= article.likes.count %> <%= (article.likes.count) == 1 ? 'Like' : 'Likes'%></p>
          </td>
       <td> <%= link_to article_path(article) do %><i class="fa fa-search"></i> <% end %> </td>
       <td> 
-        <% if current_user.id == article.user_id %>
-          <%= link_to edit_article_path(article) do %><i class="fa fa-edit"></i>             
-            <% end %>
-        <% end %> </td>
-            
-        <td>
-        <% if current_user.id == article.user_id %>
-        <%= link_to article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } do %> <i class="fa fa-trash" style="color:red;"></i> 
-                <% end %>
+        <% if @current_user%>
+              <% if current_user.id == article.user_id %>
+                <%= link_to edit_article_path(article) do %><i class="fa fa-edit"></i>             
+                  <% end %>
+              <% end %> </td>
+                  
+              <td>
+              <% if current_user.id == article.user_id %>
+              <%= link_to article_path(article),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } do %> <i class="fa fa-trash" style="color:red;"></i> 
+                      <% end %>
+              <% end %>
         <% end %>
-                </td>              
+      </td>              
     </tr>
   <% end %>
 </table>
