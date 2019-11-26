@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :passwords
   root 'welcome#index'
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
 end

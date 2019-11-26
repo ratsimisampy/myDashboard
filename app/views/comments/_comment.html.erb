@@ -1,15 +1,15 @@
 
 <p>
-<strong>Commenter:</strong>
+<strong><%= t('comment.title')%></strong>
 <%= comment.commenter %>
 </p>
 
 <p>
-<strong>Comment:</strong>
+<strong><%= t('comment.body')%></strong>
 <%= comment.body %>
 </p>
 
 <p>
-<strong>Auteur :</strong>
+<strong><%= t('comment.author')%></strong>
 <%= @users.find(comment.user_id).username %>
 </p>

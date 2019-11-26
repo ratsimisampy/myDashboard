@@ -15,5 +15,8 @@ module AdminProfil
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    I18n.available_locales = [:en, :fr]
+    #config.time_zone = 'France' # set default time zone to "France" (UTC +4)
+    #config.i18n.default_locale = :fr # set default locale to French
   end
 end
