@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+fr:
   activerecord:
     attributes:
       article:
@@ -37,41 +37,45 @@ en:
         body: "Body"
   forms:
     messages:
-      success: "Operation succeeded!"
+      success: "Operation reussie!"
     buttons:
-      edit: "Edit"
-      submit: "Submit"
+      edit: "Editer"
+      submit: "Valider"
   menu:
     nav:
-      home: "Home"
-      article: "Posts"
-      password: "Passwords management"
-      lang: languages
-      conx-state: "Logged as "
-      edit-prof: "Edit profil"
-      logout: "logout"
-    new_article: "Add an article"
+      home: "Accueil"
+      post: "Articles"
+      password: "mots de passe"
+      lang: langages
+      conx-state: "Connecte en tant que "
+      edit-prof: "Editer profil"
+      logout: "Deconnecter"
+    new_article: "Ajouter un article"
+    languages:
+      lang:       
+        en: "anglais"
+        fr: "francais"
   articles:
     index:
-      header: "List of articles"
-      title: "title"
-      text: "content"
-      author: "author"
-      comment: "comment"      
+      header: "Liste des articles"      
+      title: "titre"
+      text: "texte"
+      author: "auteur"
+      comment: "commentaire"
     edit:
-      title: "Add article"
+      title: "Ajouter article"
     new:
-      title: "New article"
+      title: "Nouvel article"
     create:
-      success: "Your article '%{title}' has been created successfully!"
-      failed: "Sorry, you've failed to create your article!"  
+      success: "Votre article '%{title}' a ete cree avec success!"
+      failed: "Desole, votre article n'a pas pu etre cree!"  
     update:
-      success: "Article '%{title}' has been updated"
-      failed: "You've failed to update the article '%{title}'"
-    login: "You must be logged in!"
+      success: "Article a ete mis jour"
+      failed: "Echec de la mise a jour de l'article"
+    login: "Vous devez vous connecter pour acceder a cette section"
   comment:
-    add: "Add your comment"
-    label: "Comment(s)"
-    title: "Title"
-    body: "Comment"
-    author: "Author"   
+    add: "Ajouter un commentaire"
+    label: "Commentaire(s)"
+    title: "Titre"
+    body: "Commentaire"
+    author: "Auteur" 
